@@ -4,8 +4,8 @@ namespace Application.Implemintations
 {
     public class Reporting : IIncome, IShipment, IReport
     {
-        private readonly Warehouse _warehouse;
-        public Reporting(Warehouse warehouse)
+        private readonly IWarehouse _warehouse;
+        public Reporting(IWarehouse warehouse)
         {
             _warehouse = warehouse;
         }

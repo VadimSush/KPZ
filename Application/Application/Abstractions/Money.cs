@@ -16,11 +16,11 @@
             {
                 if (value < 0)
                 {
-                    IntPart = 0;
+                    _intPart = 0;
                 }
                 else
                 {
-                    IntPart = value;
+                    _intPart = value;
                 }
             }
         }
@@ -33,15 +33,15 @@
             {
                 if (value < 0)
                 {
-                    FloatPart = 0;
+                    _floatPart = 0;
                 }
                 else if (value > 99)
                 {
-                    FloatPart = 99;
+                    _floatPart = 99;
                 }
                 else
                 {
-                    FloatPart = value;
+                    _floatPart = value;
                 }
             }
         }

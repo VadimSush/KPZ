@@ -1,6 +1,8 @@
-﻿namespace Application.Implemintations
+﻿using Application.Abstractions;
+
+namespace Application.Implemintations
 {
-    public class Warehouse
+    public class Warehouse : IWarehouse
     {
         public Warehouse(List<Product> products)
         {

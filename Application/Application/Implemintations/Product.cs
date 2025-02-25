@@ -62,16 +62,14 @@ namespace Application.Implemintations
         {
             if (!IsCorrectMoney(intPart, floatPart))
             {
-                Console.WriteLine("Некоректні значення параметрів");
-                return;
+                throw new Exception("Некоректні значення параметрів");
             }
 
             int resultPrice = Price.IntPart * 100 + Price.FloatPart - intPart * 100 + floatPart;
 
             if (resultPrice < 0)
             {
-                Console.WriteLine("Ви передали завеликі параметри, товар коштує менше");
-                return;
+                throw new Exception("Ви передали завеликі параметри, товар коштує менше");
             }
 
             NumberToMoney(resultPrice);
@@ -81,8 +79,7 @@ namespace Application.Implemintations
         {
             if (!IsCorrectMoney(intPart, floatPart))
             {
-                Console.WriteLine("Некоректні значення параметрів");
-                return;
+                throw new Exception("Некоректні значення параметрів");
             }
 
             int resultPrice = Price.IntPart * 100 + Price.FloatPart + intPart * 100 + floatPart;
