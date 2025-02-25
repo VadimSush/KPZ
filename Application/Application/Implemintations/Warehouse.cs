@@ -23,5 +23,10 @@
         {
             _products.Remove(product);
         }
+
+        public List<Product> GetProducts()
+        {
+            return _products;
+        }
     }
 }

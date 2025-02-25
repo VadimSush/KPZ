@@ -46,6 +46,6 @@
             }
         }
 
-        public abstract void Print();
+        public abstract string Print();
     }
 }

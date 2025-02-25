@@ -6,10 +6,10 @@ namespace Application.Implemintations
     {
         public Dollar(int intPart, int floatPart) : base(intPart, floatPart) { }
 
-        public override void Print()
+        public override string Print()
         {
             string floatString = FloatPart > 0 ? $" {FloatPart} центів" : "";
-            Console.WriteLine($"{IntPart} доларів{floatString}");
+            return $"{IntPart} доларів{floatString}";
         }
     }
 }

@@ -6,10 +6,10 @@ namespace Application.Implemintations
     {
         public Euro(int intPart, int floatPart) : base(intPart, floatPart) { }
 
-        public override void Print()
+        public override string Print()
         {
             string floatString = FloatPart > 0 ? $" {FloatPart} євроцентів" : "";
-            Console.WriteLine($"{IntPart} євро{floatString}");
+            return $"{IntPart} євро{floatString}";
         }
     }
 }
