@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Abstractions
+﻿namespace Application.Abstractions
 {
     public abstract class Money
     {
@@ -32,7 +26,7 @@ namespace Application.Abstractions
         }
 
         private int _floatPart;
-        public float FloatPart
+        public int FloatPart
         {
             get { return _floatPart; }
             set
