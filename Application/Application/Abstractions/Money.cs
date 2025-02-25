@@ -1,4 +1,6 @@
-﻿namespace Application.Abstractions
+﻿using System;
+
+namespace Application.Abstractions
 {
     public abstract class Money
     {
@@ -46,6 +48,46 @@
             }
         }
 
+        public void ReduceMoney(int intPart, int floatPart)
+        {
+            if (!IsCorrectMoney(intPart, floatPart))
+            {
+                throw new Exception("Некоректні значення параметрів");
+            }
+
+            int resultPrice = IntPart * 100 + FloatPart - intPart * 100 + floatPart;
+
+            if (resultPrice < 0)
+            {
+                throw new Exception("Ви передали завеликі параметри, товар коштує менше");
+            }
+
+            NumberToMoney(resultPrice);
+        }
+
+        public void IncreaseMoney(int intPart, int floatPart)
+        {
+            if (!IsCorrectMoney(intPart, floatPart))
+            {
+                throw new Exception("Некоректні значення параметрів");
+            }
+
+            int resultPrice = IntPart * 100 + FloatPart + intPart * 100 + floatPart;
+
+            NumberToMoney(resultPrice);
+        }
+
         public abstract string Print();
+
+        private bool IsCorrectMoney(int intPart, int floatPart)
+        {
+            return intPart >= 0 && floatPart >= 0 && floatPart < 100;
+        }
+
+        private void NumberToMoney(int num)
+        {
+            IntPart = num / 100;
+            FloatPart = num % 100;
+        }
     }
 }

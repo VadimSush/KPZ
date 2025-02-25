@@ -60,42 +60,12 @@ namespace Application.Implemintations
 
         public void ReducePrice(int intPart, int floatPart = 0)
         {
-            if (!IsCorrectMoney(intPart, floatPart))
-            {
-                throw new Exception("Некоректні значення параметрів");
-            }
-
-            int resultPrice = Price.IntPart * 100 + Price.FloatPart - intPart * 100 + floatPart;
-
-            if (resultPrice < 0)
-            {
-                throw new Exception("Ви передали завеликі параметри, товар коштує менше");
-            }
-
-            NumberToMoney(resultPrice);
+            Price.ReduceMoney(intPart, floatPart);
         }
 
         public void IncreasePrice(int intPart, int floatPart = 0)
         {
-            if (!IsCorrectMoney(intPart, floatPart))
-            {
-                throw new Exception("Некоректні значення параметрів");
-            }
-
-            int resultPrice = Price.IntPart * 100 + Price.FloatPart + intPart * 100 + floatPart;
-
-            NumberToMoney(resultPrice);
-        }
-
-        private bool IsCorrectMoney(int intPart, int floatPart)
-        {
-            return intPart >= 0 && floatPart >= 0 && floatPart < 100;
-        }
-
-        private void NumberToMoney(int num)
-        {
-            Price.IntPart = num / 100;
-            Price.FloatPart = num % 100;
+            Price.IncreaseMoney(intPart, floatPart);
         }
     }
 }
