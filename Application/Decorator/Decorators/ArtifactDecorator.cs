@@ -1,10 +1,10 @@
 ﻿namespace Decorator.Decorators
 {
-    public class ArtefactDecorator : BaseDecorator
+    public class ArtifactDecorator : BaseDecorator
     {
         private readonly string _artifact;
 
-        public ArtefactDecorator(IWrapee wrapee, string artifact) : base(wrapee)
+        public ArtifactDecorator(IWrapee wrapee, string artifact) : base(wrapee)
         {
             _artifact = artifact;
         }
