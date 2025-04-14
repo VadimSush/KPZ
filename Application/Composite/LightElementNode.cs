@@ -1,4 +1,4 @@
-﻿using Composite.Visitor;
+using Composite.Visitor;
 using System.Text;
 using System.Xml;
 
@@ -32,6 +32,7 @@ namespace Composite
             {
                 this.childrens = new List<LightNode>();
             }
+            Render();
         }
 
         public void AddNode(LightNode node)
@@ -85,6 +86,11 @@ namespace Composite
             return GetOuterHTML(depth);
         }
 
+        public override void Create()
+        {
+            Console.WriteLine($"Створення {tagName}-елементу");
+        }
+        
         public override string Convert(IVisitor visitor)
         {
             return visitor.VisitElement(this);

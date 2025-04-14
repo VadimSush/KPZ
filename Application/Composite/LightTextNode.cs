@@ -11,6 +11,7 @@ namespace Composite
         {
             _text = text;
             childrens = new List<LightNode>();
+            Render();
         }
 
         public override string GetContents(int depth = 0)

@@ -18,6 +18,24 @@ namespace Composite
 
         public List<LightNode> childrens { get; protected set; }
 
+        protected void Render()
+        {
+            Create();
+            Insert();
+            TextRender();
+            StyleApply();
+            ClassListApply();
+        }
+
+        public virtual void Create() { }
+
+        public virtual void Insert() { }
+
+        public virtual void TextRender() { }
+
+        public virtual void StyleApply() { }
+
+        public virtual void ClassListApply() { }
 
         public abstract string Convert(IVisitor visitor);
 
