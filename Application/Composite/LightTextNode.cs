@@ -7,6 +7,7 @@
         public LightTextNode(string text)
         {
             _text = text;
+            childrens = new List<LightNode>();
         }
 
         public override string GetContents(int depth = 0)
