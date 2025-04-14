@@ -30,6 +30,7 @@ namespace Composite
             {
                 this.childrens = new List<LightNode>();
             }
+            Render();
         }
 
         public void AddNode(LightNode node)
@@ -81,6 +82,11 @@ namespace Composite
         public override string GetContents(int depth = 0)
         {
             return GetOuterHTML(depth);
+        }
+
+        public override void Create()
+        {
+            Console.WriteLine($"Створення {tagName}-елементу");
         }
 
         public enum DisplayType
