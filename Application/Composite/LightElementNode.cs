@@ -1,20 +1,22 @@
-﻿using System.Text;
+using Composite.Visitor;
+using System.Text;
+using System.Xml;
 
 namespace Composite
 {
     public class LightElementNode : LightNode
     {
-        private string tagName;
-        
-        private DisplayType displayType;
+        public string tagName { get; protected set; }
 
-        private ClosureType closureType;
+        public DisplayType displayType { get; protected set; }
 
-        private List<string> classList;
+        public ClosureType closureType { get; protected set; }
+
+        public List<string> classList { get; protected set; }
 
         private int childrenCount;
 
-        public LightElementNode(string tagName, DisplayType displayType, IEnumerable<string> classList, IEnumerable<LightNode> childrens = null, ClosureType closureType = ClosureType.Double)
+        public LightElementNode(string tagName, DisplayType displayType, IEnumerable<string> classList, IEnumerable<LightNode> childrens = null, ClosureType closureType = ClosureType.Double) : base()
         {
             this.tagName = tagName;
             this.displayType = displayType;
@@ -87,6 +89,11 @@ namespace Composite
         public override void Create()
         {
             Console.WriteLine($"Створення {tagName}-елементу");
+        }
+        
+        public override string Convert(IVisitor visitor)
+        {
+            return visitor.VisitElement(this);
         }
 
         public enum DisplayType
