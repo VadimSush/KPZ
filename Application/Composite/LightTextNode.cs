@@ -7,7 +7,7 @@ namespace Composite
     {
         public string _text { get; private set; }
 
-        public LightTextNode(string text)
+        public LightTextNode(string text) : base()
         {
             _text = text;
             childrens = new List<LightNode>();
