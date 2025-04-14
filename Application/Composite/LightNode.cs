@@ -1,4 +1,6 @@
-﻿using Composite.Iterator;
+using Composite.Visitor;
+using System.Xml;
+using Composite.Iterator;
 using System.Collections;
 
 namespace Composite
@@ -15,6 +17,9 @@ namespace Composite
         private IEnumerator<LightNode> _enumerator;
 
         public List<LightNode> childrens { get; protected set; }
+
+
+        public abstract string Convert(IVisitor visitor);
 
         public IEnumerator<LightNode> GetEnumerator()
         {
