@@ -4,8 +4,6 @@ namespace Composite
 {
     public class LightElementNode : LightNode
     {
-        private List<LightNode> childrens;
-
         private string tagName;
         
         private DisplayType displayType;
