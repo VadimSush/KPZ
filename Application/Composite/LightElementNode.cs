@@ -4,8 +4,6 @@ namespace Composite
 {
     public class LightElementNode : LightNode
     {
-        private List<LightNode> childrens;
-
         private string tagName;
         
         private DisplayType displayType;
@@ -16,7 +14,7 @@ namespace Composite
 
         private int childrenCount;
 
-        public LightElementNode(string tagName, DisplayType displayType, IEnumerable<string> classList, IEnumerable<LightNode> childrens = null, ClosureType closureType = ClosureType.Double)
+        public LightElementNode(string tagName, DisplayType displayType, IEnumerable<string> classList, IEnumerable<LightNode> childrens = null, ClosureType closureType = ClosureType.Double) : base()
         {
             this.tagName = tagName;
             this.displayType = displayType;

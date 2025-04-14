@@ -4,9 +4,10 @@
     {
         private string _text;
 
-        public LightTextNode(string text)
+        public LightTextNode(string text) : base()
         {
             _text = text;
+            childrens = new List<LightNode>();
         }
 
         public override string GetContents(int depth = 0)
