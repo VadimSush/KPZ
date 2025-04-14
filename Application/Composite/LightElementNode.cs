@@ -10,7 +10,7 @@ namespace Composite
 
         private ClosureType closureType;
 
-        private List<string> classList;
+        public List<string> classList {  get; protected set; }
 
         private int childrenCount;
 
