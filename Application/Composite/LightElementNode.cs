@@ -1,16 +1,18 @@
-﻿using System.Text;
+﻿using Composite.Visitor;
+using System.Text;
+using System.Xml;
 
 namespace Composite
 {
     public class LightElementNode : LightNode
     {
-        private string tagName;
-        
-        private DisplayType displayType;
+        public string tagName { get; protected set; }
 
-        private ClosureType closureType;
+        public DisplayType displayType { get; protected set; }
 
-        private List<string> classList;
+        public ClosureType closureType { get; protected set; }
+
+        public List<string> classList { get; protected set; }
 
         private int childrenCount;
 
@@ -81,6 +83,11 @@ namespace Composite
         public override string GetContents(int depth = 0)
         {
             return GetOuterHTML(depth);
+        }
+
+        public override string Convert(IVisitor visitor)
+        {
+            return visitor.VisitElement(this);
         }
 
         public enum DisplayType
